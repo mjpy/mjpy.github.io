@@ -42,3 +42,12 @@ img {
     position: relative;
     background: url('../img/background.jpg') no-repeat center center/cover);
 }
+
+.showcase-top {
+    position: relative;
+    height: 90px;
+}
+
+.showcase-top img {
+    width: 170px;
+}
