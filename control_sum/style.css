@@ -1,0 +1,23 @@
+.top {
+    display: block;
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.div1 {
+    float: left;
+    margin: 10px;
+    display: block;
+    width: 40%;
+    text-align: center;
+    background-color: #EEEEEE
+}
+
+.div2 {
+    float: right;
+    margin: 10px;
+    display: block;
+    width: 40%;
+    text-align: center;
+}
