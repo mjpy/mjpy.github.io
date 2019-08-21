@@ -64,14 +64,21 @@
          //Obtain user input
          var strMRZ = document.getElementById("mrz").value;
         
-         //Perform calculation   
-        result = isNumeric(strMRZ, 2);
+         //Perform calculation
+        var tab = new Array;
+        for (var i = 1; i <= strMRZ.length; i++) {
+            if (isNumeric(strMRZ, i)) {
+                tab[i-1] = Number(strMRZ.charAt(i-1));
+            }
+            else {
+                tab[i-1] = returnNumeric(strMRZ, i);
+            }
+        }
         
         
+        result = tab;
         
-        
-        
-        
+      
         
          //Display result
         document.getElementById("output2").innerHTML = result;   
