@@ -1,73 +1,28 @@
 <html>
     <head>
         <title>Checksum Calculator</title>
-        <script type="text/javascript">  
-            
-     function computeDOB() {
-          //Obtain user input
-         var strDOB = document.getElementById("dob").value;
-         
-         //Perform calculation         
-         if (strDOB.length != 6) {
-            var result = "Wrong Format!";
-         }
-         else {
-             var digits = calculateMRZ(strDOB);              
-                if (strDOB.charAt(0) == "0") {
-                    if (strDOB.charAt(1) == "0") {
-                        if (strDOB.charAt(2) == "0") {
-                            if (strDOB.charAt(3) == "0") {
-                                if (strDOB.charAt(4) == "0") {
-                                    if (strDOB.charAt(5) == "0") {
-                                    result = 0;
-                                }
-                                else {
-                                    var result = (0+0+0+0+0+digits[5])%10; 
-                                }
-                                }
-                                else {
-                                    var result = (0+0+0+0+digits[4]+digits[5])%10; 
-                                }
-                            }
-                            else {
-                                var result = (0+0+0+digits[3]+digits[4]+digits[5])%10; 
-                            }
-                        }
-                        else {
-                            var result = (0+0+digits[2]+digits[3]+digits[4]+digits[5])%10; 
-                        }  
-                    }
-                    else {
-                        var result = (0+digits[1]+digits[2]+digits[3]+digits[4]+digits[5])%10; 
-                    }
-                }
-                else {   
-                    var result = (digits[0]+digits[1]+digits[2]+digits[3]+digits[4]+digits[5])%10; 
-                }
-         }
-         //Display result
-        document.getElementById("output").innerHTML = result;   
-     }
-            
-     function calculateMRZ(strDOB) {
-         var dob = Number(strDOB);
-         var first = (~~(dob/100000)*7)%10;
-         var second = ((~~(dob/10000)%10)*3)%10;
-         var third = ((~~(dob/1000)%100)*1)%10;
-         var fourth = ((~~(dob/100)%1000)*7)%10;
-         var fifth = ((~~(dob/10)%10000)*3)%10;
-         var sixth = (~~(dob%100000)*1)%10;
-        
-         return [first, second, third, fourth, fifth, sixth];
-     }
-         
-        </script>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="main.js"></script>  
     </head>
     <body>
-         <h1>Checksum Calculator</h1>
+        
+<div class="top">
+    <h1>Enter numbers like in MRZ</h1>
+</div>
+<div class="div1">
+         <h2>Date of birth</h2>
+        <p>Date of birth:
+            <input type="text" id="dob" />
+        </p>
+        <input type="button" value="calculate" onclick="computeDOB()"/>
+         <h2>Checksum is: <span id="output">?</span></h2>
+</div>
+<div class="div2">
+         <h2>In progress</h2>
         <p>Enter date of birth like in MRZ:
             <input type="text" id="dob" />
         </p>
         <input type="button" value="calculate" onclick="computeDOB()"/>
-         <h1>Checksum is: <span id="output">?</span></h1>
+         <h2>Checksum is: <span id="output">?</span></h2>
+</div>
     </body>
