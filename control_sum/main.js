@@ -75,8 +75,20 @@
             }
         }
         
+        var sum = 0;
+        for (var i = 0; i<tab.length; i++) {
+            if (i == 0 || i == 3 || i == 6 || i == 9) {
+                sum += tab[i]*7;   
+            }
+            else if (i == 1 || i == 4 || i == 7 || i == 10) {
+                sum += tab[i]*3;   
+            }
+            else {
+                sum += tab[i];
+            }
+        }
         
-        result = tab;
+        result = sum%10;
         
       
         
