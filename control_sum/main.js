@@ -1,4 +1,4 @@
-    function computeDOB() {
+/*    function computeDOB() {
           //Obtain user input
          var strDOB = document.getElementById("dob").value;
          
@@ -56,14 +56,14 @@
          return [first, second, third, fourth, fifth, sixth];
      }
 
-
+*/
 //Whole MRZ check
 
 
     function computeMRZ()  {
          //Obtain user input
          var strMRZ = document.getElementById("mrz").value;
-        
+         strMRZ = strMRZ.toUpperCase();
          //Perform calculation
         var tab = new Array;
         for (var i = 1; i <= strMRZ.length; i++) {
@@ -93,7 +93,7 @@
       
         
          //Display result
-        document.getElementById("output2").innerHTML = result;   
+        document.getElementById("output").innerHTML = result;   
     }
 
     function returnNumeric(strMRZ, pos) {

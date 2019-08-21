@@ -7,22 +7,13 @@
     <body>
         
 <div class="top">
-    <h1>Enter numbers like in MRZ</h1>
+    <h1>Check control sum</h1>
 </div>
 <div class="div1">
-         <h2>Date of birth/expiry</h2>
-        <p>Date:
-            <input type="text" id="dob" />
-        </p>
-        <input type="button" value="calculate" onclick="computeDOB()"/>
-         <h2>Checksum is: <span id="output">?</span></h2>
-</div>
-<div class="div2">
-         <h2>In progress</h2>
-        <p>Doc nr:
+         <h2>Enter data exactly like in MRZ without check digit.</h2>
+        <p>Date of birth/date of expiry/Document number.<br>You can use both upper and lower case.
             <input type="text" id="mrz" />
         </p>
         <input type="button" value="calculate" onclick="computeMRZ()"/>
-         <h2>Checksum is: <span id="output2">?</span></h2>
+         <h2>Checksum is: <span id="output">?</span></h2>
 </div>
-    </body>

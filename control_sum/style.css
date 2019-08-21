@@ -1,23 +1,27 @@
 .top {
     display: block;
     margin: 10px;
-    width: 100%;
+    width: 50%;
     text-align: center;
+    float: left;
+    background-color: #DDDDDD;
 }
 
 .div1 {
     float: left;
     margin: 10px;
     display: block;
-    width: 40%;
-    text-align: center;
-    background-color: #EEEEEE
+    width: 50%;
+    text-align: justify;
+    background-color: #EEEEEE;
+    position: relative;
 }
 
-.div2 {
-    float: right;
-    margin: 10px;
-    display: block;
-    width: 40%;
-    text-align: center;
+.div1 input {
+    font-size: 20px;
 }
+
+p {
+    font-size: 20px;
+}
+
