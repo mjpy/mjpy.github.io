@@ -1,77 +1,22 @@
-<form>
-<td width=”94″>Negotiated price:*</td>
-<td width=”165″><input type= “text” name=”nprice” /></td>
-</tr>
-<tr>
-<td>Sales tax:*</td>
-<td><input type=”text” name=”tax”/></td>
-<td width=”53″>%</td>
-</tr>
-<tr>
-<td height=”31″>Term:</td>
-<td><select name=”term”>
-<option value=”36″>36 months</option>
-<option value=”48″>48 months</option>
-<option value=”60″>60 months</option>
-</select> </td>
-</tr>
-<tr>
-<td>Interest Rate:*</td>
-<td><label>
-<input type=”irate” name=”rate”/>
-</label> </td>
-<td>%</td>
-</tr>
-<tr>
-<td>Down payment:</td>
-<td><label>
-<input type=”downpayment” name=”payment” />
-</label> </td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td><input name=”Input” type=”button” value=”Calculate payments” onclick=”calcpayments()”/></td>
-<td><input name=”reset2″ type=”reset” value=”Clear” /></td>
-</tr>
-</table>
-<br />
-<b>Your estimated monthly payment is:</b>
-<div id=”monthlypayment”></div>
-</form>
-
-<script>function calcpayments()
-
-{
-
-//The five variables we are going to use in the formula
-
-var nprice=document.forms[0].nprice.value*1;
-var salestax=document.forms[0].tax.value*1;
-var interest=document.forms[0].rate.value*1;
-var dpayment=document.forms[0].payment.value*1;
-
-var t;
-
-//We used a loop to select the term for the payments
-
-for (i=0; i<document.forms[0].term.options.length; i++)
-
-{
-
-if (document.forms[0].term.options[i].selected)
-t = document.forms[0].term.options[i].value*1;
-}
-
-//This is the formula that does the math
-
-var result=(nprice*(salestax/100 +1)-dpayment)*((interest/100)/12) / (1-Math.pow((1+(interest/100)/12),(-t)));
-
-result=Math.round(result*100) /100;
-
-//The line below shows the result in the box
-
-document.getElementById(“monthlypayment”).innerHTML=result;
-
-}
-
-</script>
+<html>
+    <head>
+        <title>Checksum Calculator</title>
+        <script type="text/javascript">              
+     function computeDOB() {
+          //Obtain user input
+         var dob = Number(document.getElementById("dob").value);
+         //Perform calculation
+         var result = dob*2;
+         //Display result of calculation
+        document.getElementById("output").innerHTML = result;     
+     }
+        </script>
+    </head>
+    <body>
+         <h1>Checksum Calculator</h1>
+        <p>Enter date of birth like in MRZ:
+            <input type="text" id="dob" />
+        </p>
+        <input type="button" value="calculate" onclick="computeDOB()"/>
+         <h1>Checksum is: <span id="output">?</span></h1>
+    </body>
