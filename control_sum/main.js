@@ -56,12 +56,22 @@
          return [first, second, third, fourth, fifth, sixth];
      }
 
+
+//Whole MRZ check
+
+
     function computeMRZ()  {
          //Obtain user input
          var strMRZ = document.getElementById("mrz").value;
-         
+        
          //Perform calculation   
-        result = returnNumeric(strMRZ, 1);
+        result = isNumeric(strMRZ, 2);
+        
+        
+        
+        
+        
+        
         
          //Display result
         document.getElementById("output2").innerHTML = result;   
@@ -69,4 +79,8 @@
 
     function returnNumeric(strMRZ, pos) {
         return strMRZ.charCodeAt(pos-1)-55;
+    }
+
+    function isNumeric(strMRZ, pos) {
+        return (Number.isInteger(Number(strMRZ.charAt(pos-1))));
     }
