@@ -8,7 +8,7 @@
             var result = "Wrong Format!";
          }
          else {
-             var digits = calculateMRZ(strDOB);              
+             var digits = dobCheckSum(strDOB);              
                 if (strDOB.charAt(0) == "0") {
                     if (strDOB.charAt(1) == "0") {
                         if (strDOB.charAt(2) == "0") {
@@ -45,7 +45,7 @@
         document.getElementById("output").innerHTML = result;   
      }
             
-     function calculateMRZ(strDOB) {
+     function dobCheckSum(strDOB) {
          var dob = Number(strDOB);
          var first = (~~(dob/100000)*7)%10;
          var second = ((~~(dob/10000)%10)*3)%10;
