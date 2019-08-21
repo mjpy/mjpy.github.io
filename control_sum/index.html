@@ -5,10 +5,34 @@
      function computeDOB() {
           //Obtain user input
          var dob = Number(document.getElementById("dob").value);
+         
          //Perform calculation
-         var result = dob*2;
+         
+         if (dob.toString().length != 6) {
+            var result = "Wrong Format!";
+         }
+         else {
+             var first = (~~(dob/100000)*7)%10;
+             var second = ((~~(dob/10000)%10)*3)%10;
+             var third = ((~~(dob/1000)%100)*1)%10;
+             var fourth = ((~~(dob/100)%1000)*7)%10;
+             var fifth = ((~~(dob/10)%10000)*3)%10;
+             var sixth = (~~(dob%100000)*1)%10;
+             
+             var result = (first+second+third+fourth+fifth+sixth)%10;
+             
+             
+         }
+         
+         
+         
+         
+         
+         
+         
+         
          //Display result of calculation
-        document.getElementById("output").innerHTML = result;     
+        document.getElementById("output").innerHTML = result;   
      }
         </script>
     </head>
