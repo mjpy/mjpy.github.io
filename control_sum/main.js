@@ -18,7 +18,7 @@
             if (i % 3 == 0) {
                 sum += tab[i]*7;   
             }
-            else if ((i % 2 == 0 && i != 4 && (i-1)%6 != 0) || (i == 5 || (i-5)%6 == 0)) {
+            else if ([2,5,8,11,14,17,20].includes(i)) {
                 sum += tab[i];   
             }
             else {
