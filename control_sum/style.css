@@ -1,20 +1,30 @@
 .top {
     display: block;
     margin: 10px;
-    width: 50%;
+    width: 400px;
     text-align: center;
     float: left;
-    background-color: #DDDDDD;
+    background-color: #BBBBBB;
+    position: absolute;
 }
 
 .div1 {
-    float: left;
     margin: 10px;
-    display: block;
-    width: 50%;
-    text-align: justify;
+    margin-top: 100px;
+    display: inline-block;
+    width: 400px;
+    text-align: left;
     background-color: #EEEEEE;
     position: relative;
+}
+
+.submit {
+    background: #BBBBBB;
+    display: block;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .div1 input {
