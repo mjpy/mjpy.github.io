@@ -14,11 +14,11 @@ function scrollPortfolio() {
 }
 
 function menuChange() {
-    if (window.scrollY > 500 && menu == 0) {
+    if (window.scrollY > 300 && menu == 0) {
         showNav();
         menu = 1;
     }
-    else if (window.scrollY <= 500 && menu == 1) {
+    else if (window.scrollY <= 300 && menu == 1) {
         hideNav();
         menu = 0;
     }
