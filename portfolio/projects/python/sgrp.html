@@ -1,0 +1,19 @@
+<h3>Takes document number as argument</h3>
+<h2>Firefox</h2>
+<blockquote>
+from selenium import webdriver
+<br>import sys
+<br>
+<br>url = "https://checkwpstatus.mom.gov.sg/Pages/home.aspx"
+<br>doc_nr = sys.argv[1]
+<br>
+<br>driver = webdriver.Firefox()
+<br>driver.get(url)
+<br>
+<br>driver.find_element_by_id("ctl00_ctl40_g_6970c440_5b2c_4b60_ad5e_3fc670e7fb1f_txtCsn").send_keys(doc_nr)
+<br>driver.find_element_by_id("ctl00_ctl40_g_6970c440_5b2c_4b60_ad5e_3fc670e7fb1f_btnSubmit").click()
+<br>
+<br>output = driver.find_element_by_id('ctl00_ctl40_g_6970c440_5b2c_4b60_ad5e_3fc670e7fb1f_cellDateValue')
+<br>print(output.get_attribute('innerHTML'))
+<br>driver.close()
+</blockquote>
